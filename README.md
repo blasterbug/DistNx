@@ -43,7 +43,7 @@ void setup()
 void loop()
 {
     // get distance
-    get_distance_LSB( &distance );
+    get_long_distance( &distance );
     // display distance
     Serial.print( F("Distance = ") );
     Serial.print( distance );
