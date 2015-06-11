@@ -55,8 +55,8 @@ void loop()
 
 ### Features
 
- - [x] LSB distance
- - [ ] Get distance for all mode
+ - [x] LSB distance (long distance)
+ - [x] MSB distance (medium distance)
  - [ ] Get sensors data
  - [ ] Get voltage from sensor
  
