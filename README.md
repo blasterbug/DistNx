@@ -61,7 +61,7 @@ void loop()
  - [ ] Get voltage from sensor
  
 
-[Dist-Nx sensors]:(http://www.mindsensors.com/index.php?module=pagemaster&PAGE_user_op=view_page&PAGE_id=73)
-[Arduino I2C master library]:(http://dsscircuits.com/articles/arduino-i2c-master-library) 
+[Dist-Nx sensors]: http://www.mindsensors.com/index.php?module=pagemaster&PAGE_user_op=view_page&PAGE_id=73
+[Arduino I2C master library]: http://dsscircuits.com/articles/arduino-i2c-master-library
  
 
