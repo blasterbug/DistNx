@@ -58,6 +58,7 @@
 #define DIST_REG_VOLT1_MSB     0x57
 #define DIST_REG_DIST1_LSB     0x58
 #define DIST_REG_DIST1_MSB     0x59
+
 //DIST-Nx I2C Address
 #define DIST_ADDR 0x01
 
@@ -82,6 +83,18 @@ void get_long_distance( int* distance );
  * @param[out] distance medium distance
  */
 void get_medium_distance( int* distance );
+
+/**
+ * Ask for long voltage from DIST-Nx
+ * @param[out] measure voltage for long distance
+ */
+void get_long_volatge( int* measure );
+
+/**
+ * Ask for medium voltage from DIST-Nx
+ * @param[out] measure voltage for medium distance
+ */
+void get_medium_volatge( int* measure );
 
 #endif
 
