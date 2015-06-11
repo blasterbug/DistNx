@@ -11,6 +11,17 @@ you need  [Arduino I2C master library] to use the library. The Wire
 library issued with the Arduino IDE does not support the whole 
 I2C protocol as _repeat start_.
 
+### Features
+
+- [x] LSB distance (long distance)
+- [x] LSB voltage
+- [x] MSB distance (medium distance)
+- [x] MSD voltage
+- [ ] Get sensors data
+- [ ] Calibration
+- [ ] Change I2C Bus address
+- [ ] Switch off/on sensor
+
 ### Installation (Unix like systems)
 
 Open a terminal and run :
@@ -52,17 +63,6 @@ void loop()
     delay( 1000 );
 }
 ```
-
-### Features
-
- - [x] LSB distance (long distance)
- - [x] LSB voltage
- - [x] MSB distance (medium distance)
- - [x] MSD voltage
- - [ ] Get sensors data
- - [ ] Calibration
- - [ ] Change I2C Bus address
- - [ ] Switch off/on sensor
  
 
 [Dist-Nx sensors]: http://www.mindsensors.com/index.php?module=pagemaster&PAGE_user_op=view_page&PAGE_id=73
