@@ -61,17 +61,27 @@
 //DIST-Nx I2C Address
 #define DIST_ADDR 0x01
 
-/**
- * Ask for long distance from DIST-Nx
- * @param[out] distance Long distance
- */
-void get_distance_LSB( int* distance );
-
 /*
  * Switch on DIST-Nx sensor. (By default, the sensor is on.)
  * you should wait 40ms after that.
  */
 void init_distnx();
+
+/**
+ * Ask for long distance from DIST-Nx
+ * Longue distance values from 30 to 140 cm (with highest 
+ * precision in zone 40 cm to 90 cm)
+ * @param[out] distance Long distance
+ */
+void get_long_distance( int* distance );
+
+/**
+ * Ask for medium distance from DIST-Nx
+ * Medium distance values from 10 to 80 cm (with highest 
+ * precision in zone 10 cm to 40 cm)
+ * @param[out] distance medium distance
+ */
+void get_medium_distance( int* distance )
 
 #endif
 

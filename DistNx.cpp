@@ -43,15 +43,16 @@
  */
 void init_distnx()
 {
-
     I2c.write( DIST_ADDR, DIST_CMD_ENERGIZED, 1 );
 }
 
-/*
- * Switch on DIST-Nx sensor. (by default, the sensor is on.)
- * you should wait at least 40ms after that.
+/**
+ * Ask for long distance from DIST-Nx
+ * Longue distance values from 30 to 140 cm (with highest 
+ * precision in zone 40 cm to 90 cm)
+ * @param[out] distance Long distance
  */
-void get_distance_LSB( int* distance )
+void get_long_distance( int* distance )
 {
     //unsigned int distance = 0;
     I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_DIST_LSB );
@@ -59,6 +60,21 @@ void get_distance_LSB( int* distance )
     (*distance) = I2c.receive();
     (*distance) |= I2c.receive() << 8;
     //I2c.read( DIST_ADDR, DIST_REG_DIST_LSB, 2, (uint8_t*)distance );
+}
+
+/**
+ * Ask for medium distance from DIST-Nx
+ * Medium distance values from 10 to 80 cm (with highest 
+ * precision in zone 10 cm to 40 cm)
+ * @param[out] distance medium distance
+ */
+void get_medium_distance( int* distance )
+{
+    //unsigned int distance = 0;
+    I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_DIST_MSB );
+    I2c.read( DIST_ADDR, DIST_REG_DIST_LSB, 2 );
+    (*distance) = I2c.receive();
+    (*distance) |= I2c.receive() << 8;
 }
 
 #endif
