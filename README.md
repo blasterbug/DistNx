@@ -22,7 +22,7 @@ $ git clone https://github.com/blasterbug/Dist-Nx.git
 Now after (re)starting the Arduino IDE you shloud see Dist-Nx in Arduino 
 libraries menu.
 
-### Exemple
+### Example
 
 Here is an exemple of the minimal code to use the sensor. The programme display
 every second the measured distance.
