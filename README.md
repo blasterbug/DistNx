@@ -2,13 +2,14 @@
 
 ### About
 
-Dist-Nx is a Arduino library to use [Dist-Nx sensor](http://www.mindsensors.com/index.php?module=pagemaster&PAGE_user_op=view_page&PAGE_id=73)
+Dist-Nx is a Arduino library to use [Dist-Nx sensors].
 
-The library is not complete. futher tests are needed, currently I developed the
-library using an V2 sensor.
+The library is not complete, further tests are needed, currently 
+I developed the library using a DIST-Nx V2 sensor.
 
-Dist-Nx uses [Arduino I2C master library](http://dsscircuits.com/articles/arduino-i2c-master-library).
-
+you need  [Arduino I2C master library] to use the library. The Wire 
+library issued with the Arduino IDE does not support the whole 
+I2C protocol as _repeat start_.
 
 ### Installation (Unix like systems)
 
@@ -35,7 +36,8 @@ int distance;
 
 void setup()
 {
-    // nothing need for sensor
+    Serial.begin( 9600 );
+    I2c.begin();
 }
 
 void loop()
@@ -44,18 +46,22 @@ void loop()
     get_distance_LSB( &distance );
     // display distance
     Serial.print( F("Distance = ") );
-    Serial.println( distance );
+    Serial.print( distance );
+    Serial.println( F(" cm") );
+    // wait a second
     delay( 1000 );
 }
-
 ```
 
-### Working
+### Features
 
- - LSB measure
+ - [x] LSB distance
+ - [ ] Get distance for all mode
+ - [ ] Get sensors data
+ - [ ] Get voltage from sensor
+ 
 
-
-### TODO
-
- - Get meaure for all mode
+[Dist-Nx sensors]: http://www.mindsensors.com/index.php?module=pagemaster&PAGE_user_op=view_page&PAGE_id=73
+[Arduino I2C master library]: http://dsscircuits.com/articles/arduino-i2c-master-library
+ 
 
