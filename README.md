@@ -35,7 +35,8 @@ int distance;
 
 void setup()
 {
-    // nothing need for sensor
+    Serial.begin( 9600 );
+    I2c.begin();
 }
 
 void loop()
@@ -44,18 +45,20 @@ void loop()
     get_distance_LSB( &distance );
     // display distance
     Serial.print( F("Distance = ") );
-    Serial.println( distance );
+    Serial.print( distance );
+    Serial.println( F(" cm") );
+    // wait a second
     delay( 1000 );
 }
-
 ```
 
 ### Working
 
- - LSB measure
+ - LSB distance
 
 
 ### TODO
 
- - Get meaure for all mode
-
+ - Get distance for all mode
+ - Get sensors data
+ - Get voltage from sensor
