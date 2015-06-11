@@ -56,8 +56,8 @@ void loop()
 ### Features
 
  - [x] LSB distance (long distance)
- - [x] MSB distance (medium distance)
  - [x] LSB voltage
+ - [x] MSB distance (medium distance)
  - [x] MSD voltage
  - [ ] Get sensors data
  - [ ] Calibration
