@@ -57,8 +57,12 @@ void loop()
 
  - [x] LSB distance (long distance)
  - [x] MSB distance (medium distance)
+ - [x] LSB voltage
+ - [x] MSD voltage
  - [ ] Get sensors data
- - [ ] Get voltage from sensor
+ - [ ] Calibration
+ - [ ] Change I2C Bus address
+ - [ ] Switch off/on sensor
  
 
 [Dist-Nx sensors]: http://www.mindsensors.com/index.php?module=pagemaster&PAGE_user_op=view_page&PAGE_id=73
