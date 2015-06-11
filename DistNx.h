@@ -81,7 +81,7 @@ void get_long_distance( int* distance );
  * precision in zone 10 cm to 40 cm)
  * @param[out] distance medium distance
  */
-void get_medium_distance( int* distance )
+void get_medium_distance( int* distance );
 
 #endif
 
