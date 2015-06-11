@@ -9,9 +9,9 @@ DistNx	KEYWORD1
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
-get_distance_LSB	KEYWORD2
 init_distnx	KEYWORD2
-
+get_long_distance	KEYWORD2
+get_medium_distance	KEYWORD2
 #######################################
 # Constants (LITERAL1)
 #######################################
