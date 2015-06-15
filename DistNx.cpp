@@ -81,7 +81,7 @@ void get_medium_distance( int* distance )
  * Ask for long voltage from DIST-Nx
  * @param[out] measure voltage for long distance
  */
-void get_long_volatge( int* measure )
+void get_long_voltage( int* measure )
 {
     I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_VOLT_LSB );
     I2c.read( DIST_ADDR, DIST_REG_VOLT_LSB, 2, (uint8_t*)measure );
@@ -91,7 +91,7 @@ void get_long_volatge( int* measure )
  * Ask for medium voltage from DIST-Nx
  * @param[out] measure voltage for medium distance
  */
-void get_medium_volatge( int* measure )
+void get_medium_voltage( int* measure )
 {
     I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_VOLT_MSB );
     I2c.read( DIST_ADDR, DIST_REG_VOLT_MSB, 2, (uint8_t*)measure );

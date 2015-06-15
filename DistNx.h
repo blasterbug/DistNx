@@ -88,13 +88,13 @@ void get_medium_distance( int* distance );
  * Ask for long voltage from DIST-Nx
  * @param[out] measure voltage for long distance
  */
-void get_long_volatge( int* measure );
+void get_long_voltage( int* measure );
 
 /**
  * Ask for medium voltage from DIST-Nx
  * @param[out] measure voltage for medium distance
  */
-void get_medium_volatge( int* measure );
+void get_medium_voltage( int* measure );
 
 #endif
 
