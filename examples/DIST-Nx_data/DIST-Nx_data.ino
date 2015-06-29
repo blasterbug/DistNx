@@ -1,16 +1,15 @@
 /**
- * Display several data about the DIST-Nx sensor
- * 
- * @date 2015/06/29
- * @author Benjamin Sientzoff
- * @version 0.1
- */
+* Display few data about the DIST-Nx sensor
+* 
+* @date 2015/06/29
+* @author Benjamin Sientzoff
+* @version 0.1
+*/
 
 // import libraries
 #include <I2C.h>
 #include <DistNx.h>
 
-int distance;
 char soft_v[9];
 char vendor_id[9];
 char device_id[9];
@@ -27,12 +26,14 @@ void setup()
   dist_nx_vendor_id( vendor_id );
   // read Device ID
   dist_nx_device_id( device_id );
-  // display software version
-  Serial.println( soft_v );
-  // display vendor ID
-  Serial.println( vendor_id );
+
   // display device ID
   Serial.println( device_id );
+  // display vendor ID
+  Serial.println( vendor_id );
+  // display software version
+  Serial.println( soft_v );
+
 }
 
 void loop()
