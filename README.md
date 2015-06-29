@@ -7,9 +7,11 @@ Dist-Nx is a Arduino library to use [Dist-Nx sensors].
 The library is not complete, further tests are needed, currently 
 I developed the library using a DIST-Nx V2 sensor.
 
-you need  [Arduino I2C master library] to use the library. The Wire 
+### Requirements
+
+You need  [Arduino I2C master library] to use the library because the Wire 
 library issued with the Arduino IDE does not support the whole 
-I2C protocol as _repeat start_.
+I2C protocol, for instance *repeat start*.
 
 ### Features
 
