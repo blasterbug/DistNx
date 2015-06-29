@@ -79,6 +79,44 @@ void enable_adpa()
 }
 
 /**
+ * Get software version
+ * @param[out] sv Software version, should at least be 8 char long
+ */
+void dist_nx_soft_version( char* sv )
+{
+    I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_VERSION );
+    I2c.read( DIST_ADDR, DIST_REG_VERSION, 8, (uint8_t*)sv );
+    // append null-terminated string
+    sv[8] = '\n';
+}
+
+/**
+ * Get Vendor ID
+ * @param[out] vendor_id Vendor ID, should at least be 8 char long
+ */
+void dist_nx_vendor_id( char* vendor_id )
+{
+    I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_VENDORID );
+    I2c.read( DIST_ADDR, DIST_REG_VENDORID, 8, (uint8_t*)vendor_id);
+    // append null-terminated string
+    vendor_id[8] = '\n';
+}
+
+/**
+ * Get device ID
+ * @param[out] device_id device ID, should at least be 8 char long
+ */
+void dist_nx_device_id( char* device_id )
+{
+    I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_DEVICEID );
+    I2c.read( DIST_ADDR, DIST_REG_DEVICEID, 8, (uint8_t*)device_id );
+    // append null-terminated string
+    device_id[8] = '\n';
+}
+
+
+
+/**
  * Ask for long distance from DIST-Nx
  * Longue distance values from 30 to 140 cm (with highest 
  * precision in zone 40 cm to 90 cm)

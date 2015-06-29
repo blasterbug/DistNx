@@ -20,7 +20,7 @@ I2C protocol, for instance *repeat start*.
 - [x] MSB distance (medium distance)
 - [x] MSD voltage
 - [x] ADPA mode
-- [ ] Get sensors data
+- [x] Get sensors data
 - [ ] Calibration
 - [ ] Change I2C Bus address
 - [x] Switch off/on sensor
