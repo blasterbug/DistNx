@@ -10,6 +10,12 @@ DistNx	KEYWORD1
 # Methods and Functions (KEYWORD2)
 #######################################
 init_distnx	KEYWORD2
+switch_off_distnx	KEYWORD2
+disable_adpa	KEYWORD2
+enable_adpa	KEYWORD2
+dist_nx_soft_version	KEYWORD2
+dist_nx_vendor_id	KEYWORD2
+dist_nx_device_id	KEYWORD2
 get_long_distance	KEYWORD2
 get_medium_distance	KEYWORD2
 get_long_voltage	KEYWORD2

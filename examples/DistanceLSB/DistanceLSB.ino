@@ -1,6 +1,5 @@
 /**
- * Display the long distance measured by 
- * DIST-Nx every second in serial monitor.
+ * Display several data about the DIST-Nx sensor
  * 
  * @date 2015/06/29
  * @author Benjamin Sientzoff
@@ -12,6 +11,8 @@
 #include <DistNx.h>
 
 int distance;
+char soft_v[8];
+char vendor_id[8];
 
 void setup()
 {
