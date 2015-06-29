@@ -12,6 +12,8 @@ DistNx	KEYWORD1
 init_distnx	KEYWORD2
 get_long_distance	KEYWORD2
 get_medium_distance	KEYWORD2
+get_long_voltage	KEYWORD2
+get_medium_voltage	KEYWORD2
 #######################################
 # Constants (LITERAL1)
 #######################################
