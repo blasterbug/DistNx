@@ -4,8 +4,8 @@
 
 Dist-Nx is a Arduino library to use [Dist-Nx sensors].
 
-The library is not complete, further tests are needed, currently 
-I developed the library using a DIST-Nx V2 sensor.
+Further tests are needed, currently I developed the library using a 
+DIST-Nx V2 sensor.
 
 ### Requirements
 
@@ -21,9 +21,10 @@ I2C protocol, for instance *repeat start*.
 - [x] MSD voltage
 - [x] ADPA mode
 - [x] Get sensors data
-- [ ] Calibration
-- [ ] Change I2C Bus address
 - [x] Switch off/on sensor
+- [ ] Change I2C Bus address
+- [ ] Calibration
+- [ ] Data point measures
 
 ### Installation (Unix like systems)
 
@@ -70,11 +71,20 @@ void loop()
 }
 ```
 
+### Documentation
+
+Read the documentation on the repository wiki [here](https://github.com/blasterbug/DistNx/wiki) or you can generate it with Doxygen as follow.
+
+```bash
+$ doxygen Doxyfile
+```
+After printing some ouput, you should get a `html` folder. Then open 
+`index.html`in your favorite web browser. Of course, source code is commented.
+
 ### About ADPA
 
 This sensor supports Auto Detecting Parallel Architecture (ADPA) for sensors. This means that DIST-Nx can coexist with LEGO or third party digital sensors on a single I2C bus. This enables user to employ several sensors on the same bus without the need of external sensor multiplexer, reducing the overall size and cost. By default, the ADPA mode is disabled.
 
 [Dist-Nx sensors]: http://www.mindsensors.com/index.php?module=pagemaster&PAGE_user_op=view_page&PAGE_id=73
 [Arduino I2C master library]: http://dsscircuits.com/articles/arduino-i2c-master-library
- 
-
+[DIST-Nx wiki]: https://github.com/blasterbug/DistNx/wiki
