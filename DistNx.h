@@ -60,13 +60,28 @@
 #define DIST_REG_DIST1_MSB     0x59
 
 //DIST-Nx I2C Address
-#define DIST_ADDR 0x01
+#define DIST_ADDR 0x1
 
-/*
+/**
  * Switch on DIST-Nx sensor. (By default, the sensor is on.)
  * you should wait 40ms after that.
  */
 void init_distnx();
+
+/**
+ * Switch off DIST-Nx sensor.
+ */
+void switcho_ff_distnx();
+
+/**
+ * Disable ADPA mode
+ */
+void disable_adpa();
+
+/**
+ * Enable ADPA mode
+ */
+void enable_adpa();
 
 /**
  * Ask for long distance from DIST-Nx
