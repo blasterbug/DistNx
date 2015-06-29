@@ -80,7 +80,7 @@ void enable_adpa()
 
 /**
  * Get software version
- * @param[out] sv Software version, should at least be 8 char long
+ * @param[out] sv Software version, should at least be 9 char long
  */
 void dist_nx_soft_version( char* sv )
 {
@@ -92,7 +92,7 @@ void dist_nx_soft_version( char* sv )
 
 /**
  * Get Vendor ID
- * @param[out] vendor_id Vendor ID, should at least be 8 char long
+ * @param[out] vendor_id Vendor ID, should at least be 9 char long
  */
 void dist_nx_vendor_id( char* vendor_id )
 {
@@ -104,7 +104,7 @@ void dist_nx_vendor_id( char* vendor_id )
 
 /**
  * Get device ID
- * @param[out] device_id device ID, should at least be 8 char long
+ * @param[out] device_id device ID, should at least be 9 char long
  */
 void dist_nx_device_id( char* device_id )
 {
