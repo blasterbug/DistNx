@@ -7,6 +7,9 @@ Dist-Nx is a Arduino library to use [Dist-Nx sensors].
 Further tests are needed, currently I developed the library using a 
 DIST-Nx V2 sensor.
 
+Distance registers provide Distance information in millimeters. 
+Voltage registers provide the raw voltage in milli-volts.
+
 ### Requirements
 
 You need  [Arduino I2C master library] to use the library because the Wire 
