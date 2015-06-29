@@ -25,7 +25,7 @@ I2C protocol, for instance *repeat start*.
 - [x] ADPA mode
 - [x] Get sensors data
 - [x] Switch off/on sensor
-- [ ] Change I2C Bus address
+- [ ] Change I2C address
 - [ ] Calibration
 - [ ] Data point measures
 
