@@ -87,7 +87,7 @@ void dist_nx_soft_version( char* sv )
     I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_VERSION );
     I2c.read( DIST_ADDR, DIST_REG_VERSION, 8, (uint8_t*)sv );
     // append null-terminated string
-    sv[8] = '\n';
+    sv[8] = '\0';
 }
 
 /**
@@ -99,7 +99,7 @@ void dist_nx_vendor_id( char* vendor_id )
     I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_VENDORID );
     I2c.read( DIST_ADDR, DIST_REG_VENDORID, 8, (uint8_t*)vendor_id);
     // append null-terminated string
-    vendor_id[8] = '\n';
+    vendor_id[8] = '\0';
 }
 
 /**
@@ -111,7 +111,7 @@ void dist_nx_device_id( char* device_id )
     I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_DEVICEID );
     I2c.read( DIST_ADDR, DIST_REG_DEVICEID, 8, (uint8_t*)device_id );
     // append null-terminated string
-    device_id[8] = '\n';
+    device_id[8] = '\0';
 }
 
 
