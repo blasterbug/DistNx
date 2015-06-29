@@ -30,6 +30,8 @@ $ cd <UserDirectory>/Arduino/libraries
 $ git clone https://github.com/blasterbug/Dist-Nx.git
 ```
 
+Or if you prefer, download the zip or the last release and directly unzip it in the `Arduino/libraries` folder.
+
 Now after (re)starting the Arduino IDE you shloud see Dist-Nx in Arduino 
 libraries menu.
 
