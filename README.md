@@ -40,7 +40,7 @@ libraries menu.
 ### Example
 
 Here is an exemple of the minimal code to use the sensor. The programme display
-every second the measured distance.
+every second the measured long distance.
 
 ```arduino
 // import libraries
