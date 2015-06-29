@@ -22,9 +22,21 @@ void setup()
 void loop()
 {
     // get distance
+    get_medium_volatge( &distance );
+    // display distance
+    Serial.print( F("medium voltage = ") );
+    Serial.println( distance );
+    get_long_volatge( &distance );
+    // display distance
+    Serial.print( F("long voltage = ") );
+    Serial.println( distance );
+    get_medium_distance( &distance );
+    // display distance
+    Serial.print( F("medium distance = ") );
+    Serial.println( distance );
     get_long_distance( &distance );
     // display distance
-    Serial.print( F("Distance = ") );
+    Serial.print( F("long distance = ") );
     Serial.println( distance );
     delay( 1000 );
 }
