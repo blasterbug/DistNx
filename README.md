@@ -68,7 +68,10 @@ void loop()
   delay( 1000 );
 }
 ```
- 
+
+### About ADPA
+
+This sensor supports Auto Detecting Parallel Architecture (ADPA) for sensors. This means that DIST-Nx can coexist with LEGO or third party digital sensors on a single I2C bus. This enables user to employ several sensors on the same bus without the need of external sensor multiplexer, reducing the overall size and cost. By default, the ADPA mode is disabled.
 
 [Dist-Nx sensors]: http://www.mindsensors.com/index.php?module=pagemaster&PAGE_user_op=view_page&PAGE_id=73
 [Arduino I2C master library]: http://dsscircuits.com/articles/arduino-i2c-master-library
