@@ -51,20 +51,21 @@ int distance;
 
 void setup()
 {
-    Serial.begin( 9600 );
-    I2c.begin();
+  // start serial communication
+  Serial.begin( 9600 );
+  // join I2C bus
+  I2c.begin();
 }
 
 void loop()
 {
-    // get distance
-    get_long_distance( &distance );
-    // display distance
-    Serial.print( F("Distance = ") );
-    Serial.print( distance );
-    Serial.println( F(" cm") );
-    // wait a second
-    delay( 1000 );
+  // get long distance
+  get_long_distance( &distance );
+  // display distance
+  Serial.print( F("long distance = ") );
+  Serial.println( distance );
+  // wait 1 second
+  delay( 1000 );
 }
 ```
  
