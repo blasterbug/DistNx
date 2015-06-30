@@ -104,7 +104,7 @@ void dist_nx_device_id( char* device_id );
 /**
  * Ask for long distance from DIST-Nx
  * Longue distance values from 30 to 140 cm (with highest 
- * precision in zone 40 cm to 90 cm)
+ * precision in zone 40 cm to 90 cm for V2 and 30 cm to 100 cm for V3)
  * @param[out] distance Long distance
  */
 void get_long_distance( int* distance );
@@ -112,7 +112,7 @@ void get_long_distance( int* distance );
 /**
  * Ask for medium distance from DIST-Nx
  * Medium distance values from 10 to 80 cm (with highest 
- * precision in zone 10 cm to 40 cm)
+ * precision in zone 10 cm to 40 cm for V2 and 10 cm to 40 cm for V3)
  * @param[out] distance medium distance
  */
 void get_medium_distance( int* distance );
