@@ -14,14 +14,13 @@ char soft_v[9];
 char vendor_id[9];
 char device_id[9];
 
-int distance;
-
 void setup()
 {
   // start serial communcation
   Serial.begin( 9600 );
   // join I2C bus
   I2c.begin();
+
   // read software version
   dist_nx_soft_version( soft_v );
   // read vendor ID
@@ -39,11 +38,5 @@ void setup()
 
 void loop()
 {
-  // get long distance
-  get_long_distance( &distance );
-  // display distance
-  Serial.print( F("long distance = ") );
-  Serial.println( distance );
-  // wait 1 second
-  delay( 1000 );
+  // do nothing
 }
