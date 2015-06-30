@@ -1,6 +1,6 @@
 /**
 * Display few data about the DIST-Nx sensor
-* 
+*
 * @date 2015/06/29
 * @author Benjamin Sientzoff
 * @version 0.1
@@ -13,6 +13,8 @@
 char soft_v[9];
 char vendor_id[9];
 char device_id[9];
+
+int distance;
 
 void setup()
 {
@@ -33,11 +35,15 @@ void setup()
   Serial.println( vendor_id );
   // display software version
   Serial.println( soft_v );
-
 }
 
 void loop()
 {
-  // do nothing
+  // get long distance
+  get_long_distance( &distance );
+  // display distance
+  Serial.print( F("long distance = ") );
+  Serial.println( distance );
+  // wait 1 second
   delay( 1000 );
 }
