@@ -42,8 +42,20 @@
 #ifndef _DISTNX_CPP_
 #define _DISTNX_CPP_
 
+#include "Arduino.h"
 #include "DistNx.h"
 #include "I2C.h"
+
+/**
+ * Create a new sensor object with the dafult I2C address (0x1)
+ */
+DistNx::DistNx( ) : __i2c_address( DIST_DEFAULT_ADDR ) {};
+
+/**
+ * Use a new distance sensor with a custom I2C address
+ * @param address custom I2C address for the new sensor
+ */
+DistNx::DistNx( uint8_t address ) : __i2c_address( address ) {};
 
 /**
  * Switch on DIST-Nx sensor. (By default, the sensor is on.)
@@ -51,7 +63,7 @@
  */
 void DistNx::switchOn()
 {
-    I2c.write( DIST_ADDR, DIST_CMD_ENERGIZED, 1 );
+    I2c.write( __i2c_address, DIST_CMD_ENERGIZED, 1 );
 }
 
 /**
@@ -59,7 +71,7 @@ void DistNx::switchOn()
  */
 void DistNx::switchOff()
 {
-    I2c.write( DIST_ADDR, DIST_CMD_DEENERGIZED, 1 );
+    I2c.write( __i2c_address, DIST_CMD_DEENERGIZED, 1 );
 }
 
 /**
@@ -67,7 +79,7 @@ void DistNx::switchOff()
  */
 void DistNx::disableAdpa()
 {
-    I2c.write( DIST_ADDR, DIST_CMD_ADPA_OFF, 1 );
+    I2c.write( __i2c_address, DIST_CMD_ADPA_OFF, 1 );
 }
 
 /**
@@ -75,7 +87,7 @@ void DistNx::disableAdpa()
  */
 void DistNx::enableAdpa()
 {
-    I2c.write( DIST_ADDR, DIST_CMD_ADPA_ON, 1 );
+    I2c.write( __i2c_address, DIST_CMD_ADPA_ON, 1 );
 }
 
 /**
@@ -84,8 +96,8 @@ void DistNx::enableAdpa()
  */
 void DistNx::softwareVersion( char* sv )
 {
-    I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_VERSION );
-    I2c.read( DIST_ADDR, DIST_REG_VERSION, 8, (uint8_t*)sv );
+    I2c.write( __i2c_address, DIST_REG_CMD, DIST_REG_VERSION );
+    I2c.read( __i2c_address, DIST_REG_VERSION, 8, (uint8_t*)sv );
     // append null-terminated string
     sv[8] = '\0';
 }
@@ -96,8 +108,8 @@ void DistNx::softwareVersion( char* sv )
  */
 void DistNx::vendorId( char* vendor_id )
 {
-    I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_VENDORID );
-    I2c.read( DIST_ADDR, DIST_REG_VENDORID, 8, (uint8_t*)vendor_id);
+    I2c.write( __i2c_address, DIST_REG_CMD, DIST_REG_VENDORID );
+    I2c.read( __i2c_address, DIST_REG_VENDORID, 8, (uint8_t*)vendor_id);
     // append null-terminated string
     vendor_id[8] = '\0';
 }
@@ -108,8 +120,8 @@ void DistNx::vendorId( char* vendor_id )
  */
 void DistNx::deviceId( char* device_id )
 {
-    I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_DEVICEID );
-    I2c.read( DIST_ADDR, DIST_REG_DEVICEID, 8, (uint8_t*)device_id );
+    I2c.write( __i2c_address, DIST_REG_CMD, DIST_REG_DEVICEID );
+    I2c.read( __i2c_address, DIST_REG_DEVICEID, 8, (uint8_t*)device_id );
     // append null-terminated string
     device_id[8] = '\0';
 }
@@ -122,14 +134,14 @@ void DistNx::deviceId( char* device_id )
  * precision in zone 40 cm to 90 cm for V2 and 30 cm to 100 cm for V3)
  * @param[out] distance Long distance
  */
-void DistNx::longDistance( int &distance )
+void DistNx::longDistance( int* distance )
 {
     //unsigned int distance = 0;
-    I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_DIST_LSB );
-    //I2c.read( DIST_ADDR, DIST_REG_DIST_LSB, 2 );
+    I2c.write( __i2c_address, DIST_REG_CMD, DIST_REG_DIST_LSB );
+    //I2c.read( __i2c_address, DIST_REG_DIST_LSB, 2 );
     //(*distance) = I2c.receive();
     //(*distance) |= I2c.receive() << 8;
-    I2c.read( DIST_ADDR, DIST_REG_DIST_LSB, 2, (uint8_t*)distance );
+    I2c.read( __i2c_address, DIST_REG_DIST_LSB, 2, (uint8_t*)distance );
 }
 
 /**
@@ -141,8 +153,8 @@ void DistNx::longDistance( int &distance )
 void DistNx::mediumDistance( int* distance )
 {
     //unsigned int distance = 0;
-    I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_DIST_MSB );
-    I2c.read( DIST_ADDR, DIST_REG_DIST_MSB, 2 );
+    I2c.write( __i2c_address, DIST_REG_CMD, DIST_REG_DIST_MSB );
+    I2c.read( __i2c_address, DIST_REG_DIST_MSB, 2 );
     (*distance) = I2c.receive();
     (*distance) |= I2c.receive() << 8;
 }
@@ -153,8 +165,8 @@ void DistNx::mediumDistance( int* distance )
  */
 void DistNx::longVoltage( int* measure )
 {
-    I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_VOLT_LSB );
-    I2c.read( DIST_ADDR, DIST_REG_VOLT_LSB, 2, (uint8_t*)measure );
+    I2c.write( __i2c_address, DIST_REG_CMD, DIST_REG_VOLT_LSB );
+    I2c.read( __i2c_address, DIST_REG_VOLT_LSB, 2, (uint8_t*)measure );
 }
 
 /**
@@ -163,8 +175,8 @@ void DistNx::longVoltage( int* measure )
  */
 void DistNx::mediumVoltage( int* measure )
 {
-    I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_VOLT_MSB );
-    I2c.read( DIST_ADDR, DIST_REG_VOLT_MSB, 2, (uint8_t*)measure );
+    I2c.write( __i2c_address, DIST_REG_CMD, DIST_REG_VOLT_MSB );
+    I2c.read( __i2c_address, DIST_REG_VOLT_MSB, 2, (uint8_t*)measure );
 }
 
 #endif

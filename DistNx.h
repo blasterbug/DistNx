@@ -73,7 +73,13 @@ class DistNx {
     /**
      * Create a new sensor object with the dafult I2C address (0x1)
      */
-    DistNx() : __i2c_address( DIST_DEFAULT_ADDR) {};
+    DistNx( );
+    
+    /**
+     * Use a new distance sensor with a custom I2C address
+     * @param address custom I2C address for the new sensor
+     */
+    DistNx( uint8_t address );
     
     /**
      * Switch on DIST-Nx sensor. (By default, the sensor is on.)
