@@ -26,7 +26,7 @@
  *
  * @section infos File informations
  *
- * @date 2015/04/26
+ * @date 2015/07/01
  * @author Benjamin Sientzoff <benjamin.sientzof@yahoo.fr>
  *
  * \page info About ADPA
@@ -49,7 +49,7 @@
  * Switch on DIST-Nx sensor. (By default, the sensor is on.)
  * you should wait 40ms after that.
  */
-void init_distnx()
+void DistNx::switchOn()
 {
     I2c.write( DIST_ADDR, DIST_CMD_ENERGIZED, 1 );
 }
@@ -57,7 +57,7 @@ void init_distnx()
 /**
  * Switch off DIST-Nx sensor.
  */
-void switch_off_distnx()
+void DistNx::switchOff()
 {
     I2c.write( DIST_ADDR, DIST_CMD_DEENERGIZED, 1 );
 }
@@ -65,7 +65,7 @@ void switch_off_distnx()
 /**
  * Disable ADPA mode
  */
-void disable_adpa()
+void DistNx::disableAdpa()
 {
     I2c.write( DIST_ADDR, DIST_CMD_ADPA_OFF, 1 );
 }
@@ -73,7 +73,7 @@ void disable_adpa()
 /**
  * Enable ADPA mode
  */
-void enable_adpa()
+void DistNx::enableAdpa()
 {
     I2c.write( DIST_ADDR, DIST_CMD_ADPA_ON, 1 );
 }
@@ -82,7 +82,7 @@ void enable_adpa()
  * Get software version
  * @param[out] sv Software version, should at least be 9 char long
  */
-void dist_nx_soft_version( char* sv )
+void DistNx::softwareVersion( char* sv )
 {
     I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_VERSION );
     I2c.read( DIST_ADDR, DIST_REG_VERSION, 8, (uint8_t*)sv );
@@ -94,7 +94,7 @@ void dist_nx_soft_version( char* sv )
  * Get Vendor ID
  * @param[out] vendor_id Vendor ID, should at least be 9 char long
  */
-void dist_nx_vendor_id( char* vendor_id )
+void DistNx::vendorId( char* vendor_id )
 {
     I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_VENDORID );
     I2c.read( DIST_ADDR, DIST_REG_VENDORID, 8, (uint8_t*)vendor_id);
@@ -106,7 +106,7 @@ void dist_nx_vendor_id( char* vendor_id )
  * Get device ID
  * @param[out] device_id device ID, should at least be 9 char long
  */
-void dist_nx_device_id( char* device_id )
+void DistNx::deviceId( char* device_id )
 {
     I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_DEVICEID );
     I2c.read( DIST_ADDR, DIST_REG_DEVICEID, 8, (uint8_t*)device_id );
@@ -122,7 +122,7 @@ void dist_nx_device_id( char* device_id )
  * precision in zone 40 cm to 90 cm for V2 and 30 cm to 100 cm for V3)
  * @param[out] distance Long distance
  */
-void get_long_distance( int* distance )
+void DistNx::longDistance( int &distance )
 {
     //unsigned int distance = 0;
     I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_DIST_LSB );
@@ -138,7 +138,7 @@ void get_long_distance( int* distance )
  * precision in zone 10 cm to 40 cm for V2 and 10 cm to 40 cm for V3)
  * @param[out] distance medium distance
  */
-void get_medium_distance( int* distance )
+void DistNx::mediumDistance( int* distance )
 {
     //unsigned int distance = 0;
     I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_DIST_MSB );
@@ -151,7 +151,7 @@ void get_medium_distance( int* distance )
  * Ask for long voltage from DIST-Nx
  * @param[out] measure voltage for long distance
  */
-void get_long_voltage( int* measure )
+void DistNx::longVoltage( int* measure )
 {
     I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_VOLT_LSB );
     I2c.read( DIST_ADDR, DIST_REG_VOLT_LSB, 2, (uint8_t*)measure );
@@ -161,7 +161,7 @@ void get_long_voltage( int* measure )
  * Ask for medium voltage from DIST-Nx
  * @param[out] measure voltage for medium distance
  */
-void get_medium_voltage( int* measure )
+void DistNx::mediumVoltage( int* measure )
 {
     I2c.write( DIST_ADDR, DIST_REG_CMD, DIST_REG_VOLT_MSB );
     I2c.read( DIST_ADDR, DIST_REG_VOLT_MSB, 2, (uint8_t*)measure );
