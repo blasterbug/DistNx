@@ -59,7 +59,7 @@
 #define DIST_REG_DIST1_LSB     0x58
 #define DIST_REG_DIST1_MSB     0x59
 
-//DIST-Nx I2C Address
+//DIST-Nx default I2C Address
 #define DIST_DEFAULT_ADDR 0x1
 
 /** 
