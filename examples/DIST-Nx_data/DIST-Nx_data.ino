@@ -14,6 +14,8 @@ char soft_v[9];
 char vendor_id[9];
 char device_id[9];
 
+DistNx sensor;
+
 void setup()
 {
   // start serial communcation
@@ -22,11 +24,11 @@ void setup()
   I2c.begin();
 
   // read software version
-  dist_nx_soft_version( soft_v );
+  sensor.softwareVersion( soft_v );
   // read vendor ID
-  dist_nx_vendor_id( vendor_id );
+  sensor.vendorId( vendor_id );
   // read Device ID
-  dist_nx_device_id( device_id );
+  sensor.deviceId( device_id );
 
   // display device ID
   Serial.println( device_id );

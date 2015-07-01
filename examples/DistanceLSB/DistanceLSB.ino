@@ -2,6 +2,7 @@
 #include <I2C.h>
 #include <DistNx.h>
 
+DistNx sensor;
 int distance;
 
 void setup()
@@ -15,7 +16,7 @@ void setup()
 void loop()
 {
   // get long distance
-  get_long_distance( &distance );
+  sensor.longDistance( &distance );
   // display distance
   Serial.print( F("long distance = ") );
   Serial.println( distance );
