@@ -53,6 +53,9 @@ every second the measured long distance.
 #include <I2C.h>
 #include <DistNx.h>
 
+// sensor object
+DistNx sensor;
+// store distance
 int distance;
 
 void setup()
@@ -66,7 +69,7 @@ void setup()
 void loop()
 {
   // get long distance
-  get_long_distance( &distance );
+  sensor.longDistance( &distance );
   // display distance
   Serial.print( F("long distance = ") );
   Serial.println( distance );
