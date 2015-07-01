@@ -154,9 +154,10 @@ void DistNx::mediumDistance( int* distance )
 {
     //unsigned int distance = 0;
     I2c.write( __i2c_address, DIST_REG_CMD, DIST_REG_DIST_MSB );
-    I2c.read( __i2c_address, DIST_REG_DIST_MSB, 2 );
-    (*distance) = I2c.receive();
-    (*distance) |= I2c.receive() << 8;
+    I2c.read( __i2c_address, DIST_REG_DIST_MSB, 2, (uint8_t*)distance );
+    //I2c.read( __i2c_address, DIST_REG_DIST_MSB, 2 );
+    //(*distance) = I2c.receive();
+    //(*distance) |= I2c.receive() << 8;
 }
 
 /**
