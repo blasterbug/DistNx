@@ -26,7 +26,7 @@
  *
  * @section infos File informations
  *
- * @date 2015/07/01
+ * @date 2015/07/02
  * @author Benjamin Sientzoff <benjamin.sientzof@yahoo.fr>
  *
  */
@@ -79,81 +79,81 @@ class DistNx {
      * Use a new distance sensor with a custom I2C address
      * @param address custom I2C address for the new sensor
      */
-    DistNx( uint8_t address );
+    DistNx( const uint8_t address );
     
     /**
      * Switch on DIST-Nx sensor. (By default, the sensor is on.)
      * you should wait 40ms after that.
      */
-    void switchOn();
+    void switchOn( );
 
     /**
      * Switch off DIST-Nx sensor.
      */
-    void switchOff();
+    void switchOff( );
 
     /**
      * Disable ADPA mode
      */
-    void disableAdpa();
+    void disableAdpa( );
 
     /**
      * Enable ADPA mode
      */
-    void enableAdpa();
+    void enableAdpa( );
     
     /**
      * Set a custom I2C address for the sensor. 
      * Be carefuul ! You should write somewhere the new I2C address
      * @param new_address The new I2C address for the sensor
      */
-    void setAddress( uint8_t new_address);
+    void setAddress( const uint8_t new_address );
 
     /**
      * Get software version
-     * @param[out] sv Software version, should at least be 9 char long
+     * @return Software version, should at least be 9 char long
      */
-    void softwareVersion( char* sv );
+    String softwareVersion( void );
 
     /**
      * Get Vendor ID
-     * @param[out] vendor_id Vendor ID, should at least be 9 char long
+     * @return Vendor ID in a String
      */
-    void vendorId( char* vendor_id );
+    String vendorId( );
 
     /**
      * Get device ID
-     * @param[out] device_id device ID, should at least be 9 char long
+     * @return Device ID in a String.
      */
-    void deviceId( char* device_id );
+    String deviceId( );
 
     /**
      * Ask for long distance from DIST-Nx
      * Longue distance values from 30 to 140 cm (with highest 
      * precision in zone 40 cm to 90 cm for V2 and 30 cm to 100 cm for V3)
-     * @param[out] distance Long distance
+     * @preturn Long distance in millimeters
      */
-    void longDistance( int* distance );
+    int longDistance( );
 
     /**
      * Ask for medium distance from DIST-Nx
      * Medium distance values from 10 to 80 cm (with highest 
      * precision in zone 10 cm to 40 cm for V2 and 10 cm to 40 cm for V3)
-     * @param[out] distance medium distance
+     * @return medium distance in millimeters
      */
-    void mediumDistance( int* distance );
+    int mediumDistance( );
 
     /**
      * Ask for long voltage from DIST-Nx
-     * @param[out] measure voltage for long distance
+     * @return Voltage for long distance in milli-volts
      */
-    void longVoltage( int* measure );
+    int longVoltage( );
 
     /**
      * Ask for medium voltage from DIST-Nx
-     * @param[out] measure voltage for medium distance
+     * @return Voltage for medium distance in milli-volts
      */
-    void mediumVoltage( int* measure );
+    int mediumVoltage( );
     
     private:
     uint8_t __i2c_address;
