@@ -68,6 +68,7 @@
  */
 
 class DistNx {
+    
     public:
     
     /**
@@ -86,71 +87,72 @@ class DistNx {
      * you should wait 40ms after that.
      */
     void switchOn( );
-
+    
     /**
      * Switch off DIST-Nx sensor.
      */
     void switchOff( );
-
+    
     /**
      * Disable ADPA mode
      */
     void disableAdpa( );
-
+    
     /**
      * Enable ADPA mode
      */
     void enableAdpa( );
-    
     /**
-     * Set a custom I2C address for the sensor. 
-     * Be carefuul ! You should write somewhere the new I2C address
+     * Set a custom I2C address for the sensor.   
+     * Be carefuul ! This new address is effective immediately. Please note down 
+     * your address carefully for future reference.
      * @param new_address The new I2C address for the sensor
      */
-    void setAddress( const uint8_t new_address );
-
+    void setAddress( const uint8_t new_address);
+    
     /**
      * Get software version
-     * @return Software version, should at least be 9 char long
+     * @return Software version in a String
      */
-    String softwareVersion( void );
-
+    String softwareVersion( );
+    
     /**
      * Get Vendor ID
      * @return Vendor ID in a String
      */
     String vendorId( );
-
+    
     /**
      * Get device ID
-     * @return Device ID in a String.
+     * @return Device ID in a String
      */
     String deviceId( );
-
+    
+    
     /**
      * Ask for long distance from DIST-Nx
      * Longue distance values from 30 to 140 cm (with highest 
      * precision in zone 40 cm to 90 cm for V2 and 30 cm to 100 cm for V3)
-     * @preturn Long distance in millimeters
+     * @return Long distance in millimeters
      */
     int longDistance( void );
-
+    
     /**
      * Ask for medium distance from DIST-Nx
      * Medium distance values from 10 to 80 cm (with highest 
      * precision in zone 10 cm to 40 cm for V2 and 10 cm to 40 cm for V3)
-     * @return medium distance in millimeters
+     * @return Medium distance in millimeters
      */
     int mediumDistance( void );
-
+    
     /**
-     * Ask for long voltage from DIST-Nx
+     * get long distance voltage from DIST-Nx
      * @return Voltage for long distance in milli-volts
      */
     int longVoltage( void );
-
+    
     /**
-     * Ask for medium voltage from DIST-Nx
+     * Ask for medium distance voltage from DIST-Nx
      * @return Voltage for medium distance in milli-volts
      */
     int mediumVoltage( void );

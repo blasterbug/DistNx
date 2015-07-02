@@ -111,7 +111,7 @@ void DistNx::setAddress( const uint8_t new_address)
 
 /**
  * Get software version
- * @return Software version, should at least be 9 char long
+ * @return Software version in a String
  */
 String DistNx::softwareVersion( )
 {
@@ -125,7 +125,7 @@ String DistNx::softwareVersion( )
 
 /**
  * Get Vendor ID
- * @param[out] vendor_id Vendor ID, should at least be 9 char long
+ * @return Vendor ID in a String
  */
 String DistNx::vendorId( )
 {
@@ -139,7 +139,7 @@ String DistNx::vendorId( )
 
 /**
  * Get device ID
- * @param[out] device_id device ID, should at least be 9 char long
+ * @return Device ID in a String
  */
 String DistNx::deviceId( )
 {
@@ -157,12 +157,11 @@ String DistNx::deviceId( )
  * Ask for long distance from DIST-Nx
  * Longue distance values from 30 to 140 cm (with highest 
  * precision in zone 40 cm to 90 cm for V2 and 30 cm to 100 cm for V3)
- * @param[out] distance Long distance
+ * @return Long distance in millimeters
  */
-int DistNx::longDistance( )
+int DistNx::longDistance( void )
 {
     int distance;
-    //unsigned int distance = 0;
     I2c.write( __i2c_address, DIST_REG_CMD, DIST_REG_DIST_LSB );
     I2c.read( __i2c_address, DIST_REG_DIST_LSB, 2, (uint8_t*)&distance );
     return distance;
@@ -172,22 +171,21 @@ int DistNx::longDistance( )
  * Ask for medium distance from DIST-Nx
  * Medium distance values from 10 to 80 cm (with highest 
  * precision in zone 10 cm to 40 cm for V2 and 10 cm to 40 cm for V3)
- * @param[out] distance medium distance
+ * @return Medium distance in millimeters
  */
-int DistNx::mediumDistance( )
+int DistNx::mediumDistance( void )
 {
     int distance;
-    //unsigned int distance = 0;
     I2c.write( __i2c_address, DIST_REG_CMD, DIST_REG_DIST_MSB );
     I2c.read( __i2c_address, DIST_REG_DIST_MSB, 2, (uint8_t*)&distance );
     return (int)distance;
 }
 
 /**
- * Ask for long voltage from DIST-Nx
- * @param[out] measure voltage for long distance
+ * get long distance voltage from DIST-Nx
+ * @return Voltage for long distance in milli-volts
  */
-int DistNx::longVoltage( )
+int DistNx::longVoltage( void )
 {
     int measure;
     I2c.write( __i2c_address, DIST_REG_CMD, DIST_REG_VOLT_LSB );
@@ -196,10 +194,10 @@ int DistNx::longVoltage( )
 }
 
 /**
- * Ask for medium voltage from DIST-Nx
- * @param[out] measure voltage for medium distance
+ * Ask for medium distance voltage from DIST-Nx
+ * @return Voltage for medium distance in milli-volts
  */
-int DistNx::mediumVoltage( )
+int DistNx::mediumVoltage( void )
 {
     int measure;
     I2c.write( __i2c_address, DIST_REG_CMD, DIST_REG_VOLT_LSB );
