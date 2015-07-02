@@ -47,19 +47,20 @@
 #include "I2C.h"
 
 /**
- * Create a new sensor object with the dafult I2C address (0x1)
+ * Create a new sensor object with the dafult I2C address (`0x1`).
  */
 DistNx::DistNx( ) : __i2c_address( DIST_DEFAULT_ADDR ) {};
 
 /**
- * Use a new distance sensor with a custom I2C address
- * @param address custom I2C address for the new sensor
+ * Use a new distance sensor with a custom I2C address.
+ * @param address custom I2C address for the new sensor.
  */
 DistNx::DistNx( const uint8_t address ) : __i2c_address( address ) {};
 
 /**
- * Switch on DIST-Nx sensor. (By default, the sensor is on.)
- * you should wait 40ms after that.
+ * Switch on DIST-Nx sensor (by default, the sensor is on).
+ *
+ * You should wait 40ms after that.
  */
 void DistNx::switchOn( )
 {
@@ -91,10 +92,13 @@ void DistNx::enableAdpa( )
 }
 
 /**
- * Set a custom I2C address for the sensor.   
- * Be carefuul ! This new address is effective immediately. Please note down 
+ * Set a custom I2C address for the sensor.
+ *
+ * **Be careful !** This new address is effective immediately. Please note down 
  * your address carefully for future reference.
- * @param new_address The new I2C address for the sensor
+ * I2C addresses are 7 bits long. So you can set addresses from `0x1` (1) to
+ * `0x7F` (7). `0x0` is reserved to I2C master (the Arduino ).
+ * @param new_address The new I2C address for the sensor.
  */
 void DistNx::setAddress( const uint8_t new_address)
 {
@@ -110,8 +114,8 @@ void DistNx::setAddress( const uint8_t new_address)
 }
 
 /**
- * Get software version
- * @return Software version in a String
+ * Get software version.
+ * @return Software version in a String.
  */
 String DistNx::softwareVersion( )
 {
@@ -124,8 +128,8 @@ String DistNx::softwareVersion( )
 }
 
 /**
- * Get Vendor ID
- * @return Vendor ID in a String
+ * Get Vendor ID.
+ * @return Vendor ID in a String.
  */
 String DistNx::vendorId( )
 {
@@ -138,8 +142,8 @@ String DistNx::vendorId( )
 }
 
 /**
- * Get device ID
- * @return Device ID in a String
+ * Get device ID.
+ * @return Device ID in a String.
  */
 String DistNx::deviceId( )
 {
@@ -154,9 +158,10 @@ String DistNx::deviceId( )
 
 
 /**
- * Ask for long distance from DIST-Nx
- * Longue distance values from 30 to 140 cm (with highest 
- * precision in zone 40 cm to 90 cm for V2 and 30 cm to 100 cm for V3)
+ * Get long distance from DIST-Nx.
+ *
+ * Longue distance values from 30 to 140 cm with highest 
+ * precision in zone 40 cm to 90 cm for V2 and 30 cm to 100 cm for V3.
  * @return Long distance in millimeters
  */
 int DistNx::longDistance( void )
@@ -168,9 +173,10 @@ int DistNx::longDistance( void )
 }
 
 /**
- * Ask for medium distance from DIST-Nx
- * Medium distance values from 10 to 80 cm (with highest 
- * precision in zone 10 cm to 40 cm for V2 and 10 cm to 40 cm for V3)
+ * Get medium distance from DIST-Nx.
+ *
+ * Medium distance values from 10 to 80 cm with highest 
+ * precision in zone 10 cm to 40 cm for V2 and 10 cm to 40 cm for V3.
  * @return Medium distance in millimeters
  */
 int DistNx::mediumDistance( void )
@@ -182,8 +188,8 @@ int DistNx::mediumDistance( void )
 }
 
 /**
- * get long distance voltage from DIST-Nx
- * @return Voltage for long distance in milli-volts
+ * Get long distance voltage from DIST-Nx.
+ * @return Voltage for long distance in millivolts.
  */
 int DistNx::longVoltage( void )
 {
@@ -194,8 +200,8 @@ int DistNx::longVoltage( void )
 }
 
 /**
- * Ask for medium distance voltage from DIST-Nx
- * @return Voltage for medium distance in milli-volts
+ * Get medium distance voltage from DIST-Nx.
+ * @return Voltage for medium distance in millivolts.
  */
 int DistNx::mediumVoltage( void )
 {
