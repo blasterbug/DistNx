@@ -40,6 +40,8 @@ Or if you prefer, download the zip (of the last release) and directly unzip it i
 Now after (re)starting the Arduino IDE you should see Dist-Nx in Arduino 
 libraries menu. Two exemples are provided with the library.
 
+Get more details on [Arduino libraries installation guide].
+
 ### Example
 
 Here is an exemple of the minimal code to use the sensor. The programme display
@@ -91,3 +93,4 @@ This sensor supports Auto Detecting Parallel Architecture (ADPA) for sensors. Th
 [Dist-Nx sensors]: http://www.mindsensors.com/index.php?module=pagemaster&PAGE_user_op=view_page&PAGE_id=73
 [Arduino I2C master library]: http://dsscircuits.com/articles/arduino-i2c-master-library
 [DIST-Nx wiki]: https://github.com/blasterbug/DistNx/wiki
+[Arduino libraries installation guide]: https://www.arduino.cc/en/Guide/Libraries#toc4
