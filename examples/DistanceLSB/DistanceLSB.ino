@@ -1,3 +1,12 @@
+/**
+* Display long distance measured by DIST-Nx sensor
+* every second
+*
+* @date 2015/06/29
+* @author Benjamin Sientzoff
+* @version 1.0
+*/
+
 // import libraries
 #include <I2C.h>
 #include <DistNx.h>
@@ -16,10 +25,11 @@ void setup()
 void loop()
 {
   // get long distance
-  sensor.longDistance( &distance );
+  distance = sensor.longDistance();
   // display distance
   Serial.print( F("long distance = ") );
-  Serial.println( distance );
+  Serial.print( distance );
+  Serial.println( F(" mm") );
   // wait 1 second
   delay( 1000 );
 }
