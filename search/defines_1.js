@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['dist_5fcmd_5fadpa_5foff',['DIST_CMD_ADPA_OFF',['../_dist_nx_8h.html#af8f591c7c7f6d2210b133969639d6696',1,'DistNx.h']]],
+  ['dist_5fcmd_5fadpa_5fon',['DIST_CMD_ADPA_ON',['../_dist_nx_8h.html#a4c3534149de857fe5230aa95efc14555',1,'DistNx.h']]],
+  ['dist_5fcmd_5fdeenergized',['DIST_CMD_DEENERGIZED',['../_dist_nx_8h.html#a4eb598b8c2c230a512fcbf65b8ae24b6',1,'DistNx.h']]],
+  ['dist_5fcmd_5fenergized',['DIST_CMD_ENERGIZED',['../_dist_nx_8h.html#afc90f9dae8aa14edf18d1de36d11cf56',1,'DistNx.h']]],
+  ['dist_5fdefault_5faddr',['DIST_DEFAULT_ADDR',['../_dist_nx_8h.html#a5599dbefeb2a0b6bf874fe6cc1b3d005',1,'DistNx.h']]],
+  ['dist_5freg_5fcmd',['DIST_REG_CMD',['../_dist_nx_8h.html#a6acf50dc2cc34e5a09b6b7b1cb77f604',1,'DistNx.h']]],
+  ['dist_5freg_5fdeviceid',['DIST_REG_DEVICEID',['../_dist_nx_8h.html#abe2744c8818beeea550a1f96b2fa514b',1,'DistNx.h']]],
+  ['dist_5freg_5fdist1_5flsb',['DIST_REG_DIST1_LSB',['../_dist_nx_8h.html#a24b510390a3a8c92db3ef1ff09cc6149',1,'DistNx.h']]],
+  ['dist_5freg_5fdist1_5fmsb',['DIST_REG_DIST1_MSB',['../_dist_nx_8h.html#a0d25b55d1d431a901cd42ffa557f0768',1,'DistNx.h']]],
+  ['dist_5freg_5fdist_5flsb',['DIST_REG_DIST_LSB',['../_dist_nx_8h.html#a45df887c4c6ce205de444e570b847989',1,'DistNx.h']]],
+  ['dist_5freg_5fdist_5fmax_5flsb',['DIST_REG_DIST_MAX_LSB',['../_dist_nx_8h.html#adaf3875ae04d296da5da65c2ef8b9a6a',1,'DistNx.h']]],
+  ['dist_5freg_5fdist_5fmax_5fmsb',['DIST_REG_DIST_MAX_MSB',['../_dist_nx_8h.html#ad482aaf124a34978392d4625eab67e62',1,'DistNx.h']]],
+  ['dist_5freg_5fdist_5fmin_5flsb',['DIST_REG_DIST_MIN_LSB',['../_dist_nx_8h.html#acabedc3a28bd5752c560f9b71a040ce7',1,'DistNx.h']]],
+  ['dist_5freg_5fdist_5fmin_5fmsb',['DIST_REG_DIST_MIN_MSB',['../_dist_nx_8h.html#a791ff960239876e5e06217a039509c52',1,'DistNx.h']]],
+  ['dist_5freg_5fdist_5fmsb',['DIST_REG_DIST_MSB',['../_dist_nx_8h.html#a805947aa25cde6ff73726ec64f8d515c',1,'DistNx.h']]],
+  ['dist_5freg_5fmodule_5ftype',['DIST_REG_MODULE_TYPE',['../_dist_nx_8h.html#af62187bdfcbbf831f52a89147d959ce0',1,'DistNx.h']]],
+  ['dist_5freg_5fnum_5fpoints',['DIST_REG_NUM_POINTS',['../_dist_nx_8h.html#adf7338a94a8b08ae1b4804098cdab090',1,'DistNx.h']]],
+  ['dist_5freg_5fvendorid',['DIST_REG_VENDORID',['../_dist_nx_8h.html#a4d1ab7394e72b818a2fd3daf6392935b',1,'DistNx.h']]],
+  ['dist_5freg_5fversion',['DIST_REG_VERSION',['../_dist_nx_8h.html#a490c5f69ee5dee73b67aed8648f5a846',1,'DistNx.h']]],
+  ['dist_5freg_5fvolt1_5flsb',['DIST_REG_VOLT1_LSB',['../_dist_nx_8h.html#afeff6d71b020ea056aae91166bd43ea1',1,'DistNx.h']]],
+  ['dist_5freg_5fvolt1_5fmsb',['DIST_REG_VOLT1_MSB',['../_dist_nx_8h.html#ae1cdea14e5131ee6bf9374cb8cd12bcc',1,'DistNx.h']]],
+  ['dist_5freg_5fvolt_5flsb',['DIST_REG_VOLT_LSB',['../_dist_nx_8h.html#a4c469e0ac24354da23ad1a9d112a7fb9',1,'DistNx.h']]],
+  ['dist_5freg_5fvolt_5fmsb',['DIST_REG_VOLT_MSB',['../_dist_nx_8h.html#aaf7b2ae882af964c32bc464726096d90',1,'DistNx.h']]]
+];
