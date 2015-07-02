@@ -23,7 +23,7 @@ I2C protocol, for instance *repeat start*.
 - [x] Get sensors data
 - [x] Switch off/on sensor
 - [x] Connect to an I2C customized Address
-- [ ] Change I2C address
+- [x] Change I2C address
 - [ ] Calibration
 - [ ] Data point measures
 

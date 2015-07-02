@@ -13,6 +13,7 @@ SwitchOn	KEYWORD2
 switchOff	KEYWORD2
 disableAdpa	KEYWORD2
 enableAdpa	KEYWORD2
+setAddress	KEYWORD2
 softwareVersion	KEYWORD2
 vendorId	KEYWORD2
 deviceId	KEYWORD2

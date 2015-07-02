@@ -101,6 +101,13 @@ class DistNx {
      * Enable ADPA mode
      */
     void enableAdpa();
+    
+    /**
+     * Set a custom I2C address for the sensor. 
+     * Be carefuul ! You should write somewhere the new I2C address
+     * @param new_address The new I2C address for the sensor
+     */
+    void setAddress( uint8_t new_address);
 
     /**
      * Get software version

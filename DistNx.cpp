@@ -91,6 +91,25 @@ void DistNx::enableAdpa()
 }
 
 /**
+ * Set a custom I2C address for the sensor.   
+ * Be carefuul ! This new address is effective immediately. Please note down 
+ * your address carefully for future reference.
+ * @param new_address The new I2C address for the sensor
+ */
+void DistNx::setAddress( uint8_t new_address)
+{
+    I2c.write( __i2c_address, DIST_REG_CMD, 0xA0 );
+    delay( 100 );
+    I2c.write( __i2c_address, DIST_REG_CMD, 0xAA );
+    delay( 100 );
+    I2c.write( __i2c_address, DIST_REG_CMD, 0xA5 );
+    delay( 100 );
+    I2c.write( __i2c_address, DIST_REG_CMD, new_address );
+    delay( 100 );
+    __i2c_address = new_address;
+}
+
+/**
  * Get software version
  * @param[out] sv Software version, should at least be 9 char long
  */
