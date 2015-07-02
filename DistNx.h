@@ -133,7 +133,7 @@ class DistNx {
      * precision in zone 40 cm to 90 cm for V2 and 30 cm to 100 cm for V3)
      * @preturn Long distance in millimeters
      */
-    int longDistance( );
+    int longDistance( void );
 
     /**
      * Ask for medium distance from DIST-Nx
@@ -141,19 +141,19 @@ class DistNx {
      * precision in zone 10 cm to 40 cm for V2 and 10 cm to 40 cm for V3)
      * @return medium distance in millimeters
      */
-    int mediumDistance( );
+    int mediumDistance( void );
 
     /**
      * Ask for long voltage from DIST-Nx
      * @return Voltage for long distance in milli-volts
      */
-    int longVoltage( );
+    int longVoltage( void );
 
     /**
      * Ask for medium voltage from DIST-Nx
      * @return Voltage for medium distance in milli-volts
      */
-    int mediumVoltage( );
+    int mediumVoltage( void );
     
     private:
     uint8_t __i2c_address;
