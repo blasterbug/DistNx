@@ -152,13 +152,7 @@ class DistNx {
      * Get long distance voltage from DIST-Nx.
      * @return Voltage for long distance in millivolts.
      */
-    int longVoltage( void )
-    {
-        int measure;
-        I2c.write( __i2c_address, DIST_REG_CMD, DIST_REG_VOLT_LSB );
-        I2c.read( __i2c_address, DIST_REG_VOLT_LSB, 2, (uint8_t*)&measure );
-        return measure;
-    }
+    int longVoltage( void );
     
     /**
      * Get medium distance voltage from DIST-Nx.
