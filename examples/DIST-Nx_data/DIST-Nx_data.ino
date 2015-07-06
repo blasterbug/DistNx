@@ -24,7 +24,7 @@ void setup()
   I2c.begin();
 
   // read software version
-  sv = sensor.softwareVersion();
+  soft_version = sensor.softwareVersion();
   // read vendor ID
   vendor_id = sensor.vendorId();
   // read Device ID
